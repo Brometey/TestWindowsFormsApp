@@ -7,26 +7,57 @@ namespace TestApp
 {
     public partial class MainForm : Form
     {
-        private SqlConnection _connection = null;
+        public SqlConnection _connection = null;
+        int selectedRow;
         public MainForm()
         {
             
             InitializeComponent();
             
         }
+        private void CreateColumns()
+        {
+            dataGridView1.Columns.Add("id", "Id");
+            dataGridView1.Columns.Add("name", "Имя");
+            dataGridView1.Columns.Add("surname", "Фамилия");
+            dataGridView1.Columns.Add("birthday", "Дата Рождения");
+            dataGridView1.Columns.Add("Gender", "Пол");
+        }
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            new PersonDataForm(this).ShowDialog();
+
+            selectedRow = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                
+            }
+        }
+        private void ReadSingleRow(DataGridView dgw,IDataRecord record)
+        {
+            dgw.Rows.Add(record.GetString(1), record.GetString(2), record.GetDateTime(3).ToShortDateString(), record.GetString(5));
+        }
+        private void RefreshDataGrid(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+            string queryString = $"select * from PersonData";
+            SqlCommand command = new SqlCommand(queryString, _connection);
+            _connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                ReadSingleRow(dgw, reader);
+            }
+            reader.Close();
+
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        public void MainForm_Load(object sender, EventArgs e)
         {
+            CreateColumns();
             _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TestDB"].ConnectionString);
-            _connection.Open();
-            if (_connection.State == ConnectionState.Open)
-            {
-                MessageBox.Show("Установлено");
-            }
+            RefreshDataGrid(dataGridView1);
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -49,6 +80,11 @@ namespace TestApp
             PersonDataForm form2 = new PersonDataForm(this);
             form2.ShowDialog();
             
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            RefreshDataGrid(dataGridView1);
         }
     }
 }

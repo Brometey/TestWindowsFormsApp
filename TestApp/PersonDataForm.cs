@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace TestApp
 {
@@ -25,10 +26,9 @@ namespace TestApp
         {
 
         }
-
-        private void PhotoBox_Click(object sender, EventArgs e)
+        OpenFileDialog ofd = new OpenFileDialog();
+        public void PhotoBox_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Image Files(*.PNG;*.JPG;)|*.PNG;*.JPG|All files (*.*)|*.*";
 
             if (ofd.ShowDialog() == DialogResult.OK)
@@ -36,6 +36,7 @@ namespace TestApp
                 try
                 {
                     pictureBox1.Image = new Bitmap(ofd.FileName);
+
                 }
                 catch
                 {
@@ -45,7 +46,12 @@ namespace TestApp
         }
         void AddButton1_Click(object sender, EventArgs e)
         {
+
             form1.dataGridView1.Rows.Add(NameText.Text, SurnameText.Text, GenderBox.Text, BirthText.Text);
+            SqlCommand command = new SqlCommand($"INSERT INTO [PersonData] (Name,Surname,Birthday,INN,Gender,Email,PhotoPath) " +
+                                                $"VALUES(N'{NameText.Text}',N'{SurnameText.Text}','{BirthText.Text}','{InnText.Text}'," +
+                                                $"N'{GenderBox.Text}','{EmailText.Text}',N'{ofd.FileName}')", form1._connection);
+            command.ExecuteNonQuery();
             this.Close();
 
         }
@@ -59,5 +65,7 @@ namespace TestApp
         {
 
         }
+
+
     }
 }

@@ -53,7 +53,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.EmailText = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -311,19 +311,19 @@
             this.panel8.Size = new System.Drawing.Size(156, 22);
             this.panel8.TabIndex = 15;
             // 
-            // textBox2
+            // EmailText
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 258);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 22);
-            this.textBox2.TabIndex = 16;
+            this.EmailText.Location = new System.Drawing.Point(186, 258);
+            this.EmailText.Name = "EmailText";
+            this.EmailText.Size = new System.Drawing.Size(203, 22);
+            this.EmailText.TabIndex = 16;
             // 
             // PersonDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(603, 342);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.EmailText);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.textBox1);
@@ -393,6 +393,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox EmailText;
     }
 }
