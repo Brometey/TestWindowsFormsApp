@@ -1,0 +1,1 @@
+﻿INSERT INTO PersonData (Name , Surname, Birthday ,Gender,Email) VALUES (N'Барсбек', N'Адышев', '11/11/2001',N'Муж.','adyshevbars@mail.ru')

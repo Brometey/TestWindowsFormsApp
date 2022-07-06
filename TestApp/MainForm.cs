@@ -23,19 +23,10 @@ namespace TestApp
             dataGridView1.Columns.Add("birthday", "Дата Рождения");
             dataGridView1.Columns.Add("Gender", "Пол");
         }
-        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            new PersonDataForm(this).ShowDialog();
 
-            selectedRow = e.RowIndex;
-            if (e.RowIndex >= 0)
-            {
-                
-            }
-        }
         private void ReadSingleRow(DataGridView dgw,IDataRecord record)
         {
-            dgw.Rows.Add(record.GetString(1), record.GetString(2), record.GetDateTime(3).ToShortDateString(), record.GetString(5));
+            dgw.Rows.Add(record.GetInt32(0),record.GetString(1), record.GetString(2), record.GetDateTime(3).ToShortDateString(), record.GetString(5));
         }
         private void RefreshDataGrid(DataGridView dgw)
         {
@@ -65,11 +56,6 @@ namespace TestApp
 
         }
 
-        private void MainLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ChangeButton_Click(object sender, EventArgs e)
         {
 
@@ -85,6 +71,44 @@ namespace TestApp
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             RefreshDataGrid(dataGridView1);
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            new PersonDataForm(this).ShowDialog();
+
+            selectedRow = e.RowIndex;
+            
+        }
+
+        private void Search(DataGridView dgw)
+        {
+            dgw.Rows.Clear();
+            string searchString = $"SELECT * FROM PersonData WHERE CONCAT(Name,' ',Surname) like '{Search_box.Text}%'";
+            SqlCommand command = new SqlCommand(searchString,_connection);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ReadSingleRow(dgw, reader);
+            }
+            reader.Close();
+        }
+
+        private void Search_box_TextChanged(object sender, EventArgs e)
+        {
+            Search(dataGridView1);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            PersonDataForm form2 = new PersonDataForm(this);
+            form2.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

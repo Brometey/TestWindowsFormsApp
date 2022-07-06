@@ -96,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,6 +119,16 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\free-png.ru-44.png" />
+    <None Include="Resources\1345823.png" />
+    <None Include="Resources\transparent-pile-of-trash-clipart-delete-svg-icon-1627904.png" />
+    <None Include="Resources\kisspng-computer-icons-cross-delete-button-desktop-wallpap-treasure-map-5adce4c8e8b284.6651471215244259289531.jpg" />
+    <None Include="Resources\png-transparent-computer-icons-delete-icon-white-text-logo.png" />
+    <None Include="Resources\png-clipart-scalable-graphics-computer-icons-computer-file-delete-cdr-text.png" />
+    <None Include="Resources\png-transparent-gray-trash-bin-art-computer-icons-icon-remove-s-miscellaneous-text-rectangle-thumbnail.png" />
+    <None Include="Resources\add--v1.png" />
+    <None Include="Resources\pngtree-search-icon-for-your-project-png-image_1904926.jpg" />
+    <None Include="Resources\Capture.PNG" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
