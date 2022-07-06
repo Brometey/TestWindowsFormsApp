@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace TestApp
 {
     public partial class PersonDataForm : Form
     {
-        
-        public PersonDataForm()
+        public MainForm form1;
+        public PersonDataForm(MainForm owner)
         {
+            form1 = owner;
             InitializeComponent();
             GenderBox.SelectedItem = "Мужской";
 
@@ -47,10 +43,21 @@ namespace TestApp
                 }
             }
         }
-        MainForm mainForm;
-        private void AddButton1_Click(object sender, EventArgs e)
+        void AddButton1_Click(object sender, EventArgs e)
         {
-           
+            form1.dataGridView1.Rows.Add(NameText.Text, SurnameText.Text, GenderBox.Text, BirthText.Text);
+            this.Close();
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

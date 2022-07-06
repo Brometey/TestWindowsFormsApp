@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace TestApp
 {
     
-    internal static class Program
+    public static class Program
     {
         static List<Person> persons = new List<Person>();
 
@@ -18,5 +18,10 @@ namespace TestApp
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+    }
+    public static class CallBackMy
+    {
+        public delegate void callbackEvent(string what);
+        public static callbackEvent callbackEventHandler;
     }
 }
