@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="free-png.ru-44" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\free-png.ru-44.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add--v1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add--v1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,7 +148,7 @@
   <data name="1345823" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1345823.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="free-png.ru-44" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\free-png.ru-44.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="521d148e273086f246c6f7a313485392" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\521d148e273086f246c6f7a313485392.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

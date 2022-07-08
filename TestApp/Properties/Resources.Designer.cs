@@ -73,6 +73,16 @@ namespace TestApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _521d148e273086f246c6f7a313485392 {
+            get {
+                object obj = ResourceManager.GetObject("521d148e273086f246c6f7a313485392", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add__v1 {
             get {
                 object obj = ResourceManager.GetObject("add--v1", resourceCulture);

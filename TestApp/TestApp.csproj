@@ -119,6 +119,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\521d148e273086f246c6f7a313485392.png" />
     <None Include="Resources\free-png.ru-44.png" />
     <None Include="Resources\1345823.png" />
     <None Include="Resources\transparent-pile-of-trash-clipart-delete-svg-icon-1627904.png" />
